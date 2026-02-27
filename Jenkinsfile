@@ -26,7 +26,8 @@ pipeline {
          stage('Docker Build and Push') {
             steps {
                 // withDockerRegistry handles login automatically using your credentialsId
-                withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v2/') {
+               // withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v2/') {
+                withDockerRegistry(credentialsId: 'docker-hub', url: 'https://docker.io/') {
                     
                     // 1. Build and tag with Git Commit
                     sh "docker build -t dockersmpv/numeric-app:${GIT_COMMIT} ."

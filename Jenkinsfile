@@ -40,7 +40,7 @@ pipeline {
                    // sh "docker tag dockersmpv/numeric-app:${GIT_COMMIT}"
                     
                     // 3. Push both tags to Docker Hub
-                    sh "docker push dockersmpv/numeric-app:${GIT_COMMIT}"
+                   // sh "docker push dockersmpv/numeric-app:${GIT_COMMIT}"
                     sh "docker push dockersmpv/numeric-app:latest"
                     
                     sh "echo 'Successfully pushed tags: ${GIT_COMMIT} and latest'"

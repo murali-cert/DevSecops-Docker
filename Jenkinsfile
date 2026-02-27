@@ -30,7 +30,9 @@ pipeline {
                 withDockerRegistry(credentialsId: 'docker-hub', url: 'https://docker.io/v2/') {
                     
                     // 1. Build and tag with Git Commit
-                    sh "docker build -t dockersmpv/numeric-app:${GIT_COMMIT} ."
+                   // docker build --no-cache -t username/app:latest .
+                   // sh "docker build -t dockersmpv/numeric-app:${GIT_COMMIT} ."
+                    sh "docker build --no-cache -t dockersmpv/numeric-app:${GIT_COMMIT} ."
                     
                     // 2. Add the 'latest' tag to the image we just built
                     sh "docker tag dockersmpv/numeric-app:${GIT_COMMIT} dockersmpv/numeric-app:latest"

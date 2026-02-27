@@ -35,7 +35,7 @@ pipeline {
                     sh "docker build --no-cache -t dockersmpv/numeric-app:${GIT_COMMIT} ."
                     
                     // 2. Add the 'latest' tag to the image we just built
-                    //sh "docker tag dockersmpv/numeric-app:${GIT_COMMIT} dockersmpv/numeric-app:latest"
+                    sh "docker tag dockersmpv/numeric-app:${GIT_COMMIT} dockersmpv/numeric-app:latest"
                     // sh "docker tag dockersmpv/numeric-app:${GIT_COMMIT} username/numeric-app:latest"
                    // sh "docker tag dockersmpv/numeric-app:${GIT_COMMIT}"
                     

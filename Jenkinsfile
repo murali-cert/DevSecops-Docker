@@ -33,9 +33,9 @@ pipeline {
                     sh "docker build -t dockersmpv/numeric-app:${GIT_COMMIT} ."
                     
                     // 2. Add the 'latest' tag to the image we just built
-                    //sh "docker tag dockersmpv/numeric-app:${GIT_COMMIT} dockersmpv/numeric-app:latest"
+                    sh "docker tag dockersmpv/numeric-app:${GIT_COMMIT} dockersmpv/numeric-app:latest"
                     // sh "docker tag dockersmpv/numeric-app:${GIT_COMMIT} username/numeric-app:latest"
-                    sh "docker tag dockersmpv/numeric-app:${GIT_COMMIT}"
+                   // sh "docker tag dockersmpv/numeric-app:${GIT_COMMIT}"
                     
                     // 3. Push both tags to Docker Hub
                     sh "docker push dockersmpv/numeric-app:${GIT_COMMIT}"
